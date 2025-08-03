@@ -1,0 +1,65 @@
+# YOLOv11l Model Configuration
+# data.yaml: 데이터셋 설정 파일
+path: /Users/ivchxn/Desktop/Apple/BrainTumor/BrainTumorYolov11  # 데이터셋 루트 디렉토리
+train: train/images  # 학습 이미지 디렉토리
+val: valid/images      # 검증 이미지 디렉토리
+test: test/images    # 테스트 이미지 디렉토리 (선택 사항)
+
+model: yolov11l
+nc: 1 # Number of classes
+names: ['tumor']  # Class names for detection
+ch: 3  # Input channels (RGB)
+channels: 3
+
+# Backbone Architecture
+backbone:
+  - [-1, 1, Conv, [64, 3, 2]]      # 0: Conv layer
+  - [-1, 1, Conv, [128, 3, 2]]     # 1: Conv layer
+  - [-1, 2, C3k2, [256, false, 0.25]]  # 2: C3k2 module
+  - [-1, 1, Conv, [256, 3, 2]]     # 3: Conv layer
+  - [-1, 2, C3k2, [512, false, 0.25]]  # 4: C3k2 module
+  - [-1, 1, Conv, [512, 3, 2]]     # 5: Conv layer
+  - [-1, 2, C3k2, [512, true]]     # 6: C3k2 module
+  - [-1, 1, Conv, [1024, 3, 2]]    # 7: Conv layer
+  - [-1, 2, C3k2, [1024, true]]    # 8: C3k2 module
+  - [-1, 1, SPPF, [1024, 5]]       # 9: Spatial Pyramid Pooling
+  - [-1, 2, C2PSA, [1024]]         # 10: C2PSA module
+
+# Head Architecture
+head:
+  - [-1, 1, nn.Upsample, [None, 2, nearest]]  # 11: Upsample
+  - [[-1, 6], 1, Concat, [1]]      # 12: Concat with layer 6
+  - [-1, 2, C3k2, [512, false]]    # 13: C3k2 module
+  - [-1, 1, nn.Upsample, [None, 2, nearest]]  # 14: Upsample
+  - [[-1, 4], 1, Concat, [1]]      # 15: Concat with layer 4
+  - [-1, 2, C3k2, [256, false]]    # 16: C3k2 module
+  - [-1, 1, Conv, [256, 3, 2]]     # 17: Conv layer
+  - [[-1, 13], 1, Concat, [1]]     # 18: Concat with layer 13
+  - [-1, 2, C3k2, [512, false]]    # 19: C3k2 module
+  - [-1, 1, Conv, [512, 3, 2]]     # 20: Conv layer
+  - [[-1, 10], 1, Concat, [1]]     # 21: Concat with layer 10
+  - [-1, 2, C3k2, [1024, true]]    # 22: C3k2 module
+  - [[16, 19, 22], 1, Detect, [nc]]  # 23: Detection head
+
+# Model Scales
+scale: l
+scales:
+  l: [1.0, 1.0, 512]   # Large scale
+  m: [0.5, 1.0, 512]   # Medium scale
+  n: [0.5, 0.25, 1024] # Nano scale
+  s: [0.5, 0.5, 1024]  # Small scale
+  x: [1.0, 1.5, 512]   # Extra-large scale
+
+# Training Configuration
+training_config:
+  batch: 64          # Batch size
+  device: 0          # GPU device ID
+  epochs: 1000       # Number of training epochs
+  imgsz: 320         # Input image size
+  lr0: 0.0001        # Initial learning rate
+  name: train3       # Training run name
+  patience: 100      # Early stopping patience
+  pretrained: true   # Use pretrained weights
+
+# File Metadata
+yaml_file: yolo11l.yaml
