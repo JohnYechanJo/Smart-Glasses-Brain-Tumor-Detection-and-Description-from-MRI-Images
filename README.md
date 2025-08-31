@@ -4,7 +4,6 @@
 <br>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4&height=80">
 <h1>Smart Glasses for Brain Tumor Detection and Description from MRI Images</h1>
-</div>
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub last commit](https://img.shields.io/github/last-commit/JohnYechanJo/Smart-Glasses-Brain-Tumor-Detection-and-Description-from-MRI-Images)](https://github.com/JohnYechanJo/Smart-Glasses-Brain-Tumor-Detection-and-Description-from-MRI-Images/commits/main)
