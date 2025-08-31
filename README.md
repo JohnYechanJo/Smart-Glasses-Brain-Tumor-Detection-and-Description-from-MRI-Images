@@ -14,7 +14,7 @@
 <table>
   <tr>
     <td align="center"><a href="https://github.com/JohnYechanJo"><img src="https://avatars.githubusercontent.com/u/131790222?v=4" width="100px;" alt=""/><br /><sub><b>John Yechan Jo</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/alicesaito2004"><img src="https://avatars.githubusercontent.com/u/placeholder_alice" width="100px;" alt=""/><br /><sub><b>Alice Saito</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/alicesaito2004"><img src="https://avatars.githubusercontent.com/u/229644208?v=4" width="100px;" alt=""/><br /><sub><b>Alice Saito</b></sub></a><br /></td>
     <td align="center"><a href="https://github.com/ZengKai"><img src="https://avatars.githubusercontent.com/u/placeholder_zengkai" width="100px;" alt=""/><br /><sub><b>Zeng Kai</b></sub></a><br /></td>
   </tr>
 </table>
