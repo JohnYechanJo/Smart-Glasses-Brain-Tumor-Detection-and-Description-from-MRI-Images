@@ -1,7 +1,6 @@
-# Smart Glasses for Brain Tumor Detection and Description from MRI Images
 
 <div align="center">
-<img src="./Smart-Glasses-Brain-Tumor-Detection.png" alt="Smart Glasses Brain Tumor Detection">
+<img src="./Smart Glasses for Brain Tumor Detection and Description from MRI Image.png" alt="Smart Glasses Brain Tumor Detection">
 <br>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4&height=80">
 <h1>Smart Glasses for Brain Tumor Detection and Description from MRI Images</h1>
