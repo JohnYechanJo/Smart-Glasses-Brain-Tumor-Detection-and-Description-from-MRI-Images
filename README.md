@@ -21,6 +21,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=4&height=80&section=footer&fontSize=80">
 
 </div>
+<div>
 ## Overview
 This project introduces lightweight smart glasses (68g, 9.6W power, 4.7-hour battery life) for real-time brain tumor detection and description from MRI images using **YOLOv11** and the **Grok3 API**. Designed for medical settings, it enhances radiology diagnostics and surgical guidance through augmented reality (AR) overlays, integrating computer vision and natural language processing for hands-free operation.
 
